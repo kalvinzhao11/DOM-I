@@ -72,8 +72,6 @@ ctaImg.setAttribute('src', siteContent["cta"]["img-src"])
 //text-content
 const mainContent = document.getElementsByClassName("text-content")
 
-const array = Array.from(mainContent)
-
 // grab children of text-content
 const section1 = Array.from(mainContent[0].children)
 const section2 = Array.from(mainContent[1].children)
@@ -81,6 +79,7 @@ const section3 = Array.from(mainContent[2].children)
 const section4 = Array.from(mainContent[3].children)
 const section5 = Array.from(mainContent[4].children)
 
+//populate each div in main content
 section1[0].textContent = siteContent["main-content"]["features-h4"]
 section1[1].textContent = siteContent["main-content"]["features-content"]
 section2[0].textContent = siteContent["main-content"]["about-h4"]
@@ -92,17 +91,13 @@ section4[1].textContent = siteContent["main-content"]["product-content"]
 section5[0].textContent = siteContent["main-content"]["vision-h4"]
 section5[1].textContent = siteContent["main-content"]["vision-content"]
 
-// console.log(array)
-// console.log(mainContent) 
-// array.forEach(item => {
-//   const h3 = item.getElementsByTagName["h4"]
-//   console.log(h3)
-//   // console.log(item.getElementsByTagName["h4"])
-//   // item.textContent = "hi"
-//   console.log(item)
-//   console.log("Hi")
-// })
-
+// populate the middle image
 let middleImg = document.getElementById("middle-img");
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
 
+const contact = document.getElementsByClassName("contact")
+const contactItem = contact[0].children
+contactItem[0].textContent = siteContent["contact"]["contact-h4"]
+contactItem[1].textContent = siteContent["contact"]["address"]
+contactItem[2].textContent = siteContent["contact"]["phone"]
+contactItem[3].textContent = siteContent["contact"]["email"]
