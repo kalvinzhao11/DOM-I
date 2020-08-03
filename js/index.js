@@ -101,3 +101,7 @@ contactItem[0].textContent = siteContent["contact"]["contact-h4"]
 contactItem[1].textContent = siteContent["contact"]["address"]
 contactItem[2].textContent = siteContent["contact"]["phone"]
 contactItem[3].textContent = siteContent["contact"]["email"]
+
+const footer = document.getElementsByTagName("footer")
+const footerP = footer[0].children
+footerP[0].textContent = siteContent["footer"]["copyright"]
