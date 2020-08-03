@@ -40,3 +40,81 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// create array for navbar
+const navBar = document.querySelectorAll("nav")
+const navItem = Array.from(navBar[0].children)
+
+//populate nav item using array
+navItem.forEach((item, index) => {
+  item.textContent = siteContent["nav"][`nav-item-${index + 1}`]
+  item.style.color = "green"
+})
+
+const a = document.createElement("a")
+a.href = "#"
+a.textContent = "Home"
+a.style.color = "green"
+document.querySelector('nav').prepend(a)
+
+const z = document.createElement("a")
+z.href = "#"
+z.textContent = "Log in"
+z.style.color = "green"
+document.querySelector('nav').appendChild(z)
+
+// const navItem = document.querySelectorAll("a")
+// console.log(navItem)
+
+// for (let i = 1; i <= navItem.length; i++){
+//   navItem[i-1].textContent = siteContent["nav"][`nav-item-${i}`]
+// }
+
+//h1
+let ctaH1 = document.getElementsByTagName("h1")
+ctaH1[0].textContent = siteContent["cta"]["h1"]
+
+//button
+let ctaButton = document.getElementsByTagName("button")
+ctaButton[0].textContent = siteContent["cta"]["button"]
+
+//img
+let ctaImg = document.getElementById("cta-img")
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"])
+
+//text-content
+const mainContent = document.getElementsByClassName("text-content")
+
+// grab children of text-content
+const section1 = Array.from(mainContent[0].children)
+const section2 = Array.from(mainContent[1].children)
+const section3 = Array.from(mainContent[2].children)
+const section4 = Array.from(mainContent[3].children)
+const section5 = Array.from(mainContent[4].children)
+
+//populate each div in main content
+section1[0].textContent = siteContent["main-content"]["features-h4"]
+section1[1].textContent = siteContent["main-content"]["features-content"]
+section2[0].textContent = siteContent["main-content"]["about-h4"]
+section2[1].textContent = siteContent["main-content"]["about-content"]
+section3[0].textContent = siteContent["main-content"]["services-h4"]
+section3[1].textContent = siteContent["main-content"]["services-content"]
+section4[0].textContent = siteContent["main-content"]["product-h4"]
+section4[1].textContent = siteContent["main-content"]["product-content"]
+section5[0].textContent = siteContent["main-content"]["vision-h4"]
+section5[1].textContent = siteContent["main-content"]["vision-content"]
+
+// populate the middle image
+let middleImg = document.getElementById("middle-img");
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+
+const contact = document.getElementsByClassName("contact")
+const contactItem = contact[0].children
+contactItem[0].textContent = siteContent["contact"]["contact-h4"]
+contactItem[1].textContent = siteContent["contact"]["address"]
+contactItem[2].textContent = siteContent["contact"]["phone"]
+contactItem[3].textContent = siteContent["contact"]["email"]
+
+const footer = document.getElementsByTagName("footer")
+const footerP = footer[0].children
+footerP[0].textContent = siteContent["footer"]["copyright"]
