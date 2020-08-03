@@ -48,7 +48,20 @@ const navItem = Array.from(navBar[0].children)
 //populate nav item using array
 navItem.forEach((item, index) => {
   item.textContent = siteContent["nav"][`nav-item-${index + 1}`]
+  item.style.color = "green"
 })
+
+const a = document.createElement("a")
+a.href = "#"
+a.textContent = "Home"
+a.style.color = "green"
+document.querySelector('nav').prepend(a)
+
+const z = document.createElement("a")
+z.href = "#"
+z.textContent = "Log in"
+z.style.color = "green"
+document.querySelector('nav').appendChild(z)
 
 // const navItem = document.querySelectorAll("a")
 // console.log(navItem)
